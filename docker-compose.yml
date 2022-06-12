@@ -11,7 +11,7 @@ services:
       - 21117:21117
       - 21119:21119
     image: rustdesk/rustdesk-server:latest
-    command: bash -lc 'nohup hbbs -r 0.0.0.0 > ./hbbs.log 2>&1 &; nohup hbbr > ./hbbr.log 2>&1 &'
+    command: bash ./start.sh
     volumes:
       - "./workdir:/root"
     network_mode: "host"
