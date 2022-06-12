@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  rustdesk-server:
+    container_name: rustdesk-server
+    ports:
+      - 21115:21115
+      - 21116:21116
+      - 21116:21116/udp
+      - 21118:21118
+      - 21117:21117
+      - 21119:21119
+    image: rustdesk/rustdesk-server:latest
+    environment:
+      MYADRESS: "0.0.0.0:21117"
+    command: /bin/bash ./start.sh
+    volumes:
+      - "./workdir:/root"
+    network_mode: "host"
+    restart: unless-stopped
