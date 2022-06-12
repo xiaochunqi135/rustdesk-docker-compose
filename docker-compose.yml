@@ -11,9 +11,7 @@ services:
       - 21117:21117
       - 21119:21119
     image: rustdesk/rustdesk-server:latest
-    environment:
-      MYADRESS: "0.0.0.0:21117"
-    command: /bin/bash ./start.sh
+    command: bash -lc 'nohup hbbs -r 0.0.0.0 > ./hbbs.log 2>&1 &; nohup hbbr > ./hbbr.log 2>&1 &'
     volumes:
       - "./workdir:/root"
     network_mode: "host"
