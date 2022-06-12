@@ -1,0 +1,5 @@
+sudo bash /usr/local/qcloud/stargate/admin/uninstall.sh
+sudo bash /usr/local/qcloud/YunJing/uninst.sh
+sudo bash /usr/local/qcloud/monitor/barad/admin/uninstall.sh
+sudo rm -rf /usr/local/qcloud
+sudo ps -A | grep agent
