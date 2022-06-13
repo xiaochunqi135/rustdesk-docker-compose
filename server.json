@@ -1,0 +1,25 @@
+{
+    "run_type": "server",
+    "local_addr": "0.0.0.0",
+    "local_port": 443,
+    "remote_addr": "127.0.0.1",
+    "remote_port": 80,
+    "log_level": 1,
+    "log_file": "/home/dev/public/.../log.txt",
+    "password": [
+        "password"
+    ],
+    "ssl": {
+        "cert": "/root/.../server.crt",
+        "key": "/root/.../server.key",
+        "fallback_port": 8080
+    }
+}
+
+[Service]
+Type=simple
+User=root
+ExecStart=/root/.../xxxxxx-go -config /root/.../server.json
+Restart=on-failure
+RestartSec=10s
+LimitNOFILE=infinity
