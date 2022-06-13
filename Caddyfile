@@ -1,0 +1,11 @@
+xxxx.xxx.xx:8080 {
+        root * /home/arco/public/.../wps-addon-publish
+        file_server
+        try_files {path} index.html
+}
+
+:80 {
+        root * /home/dev/public/.../wps-addon-publish
+        file_server
+        try_files {path} index.html
+}
